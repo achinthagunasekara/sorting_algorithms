@@ -1,9 +1,4 @@
-""" Merge sort implementation """
-
-INPUT = [
-    [2, 1, 9, 5, 7, 4],
-    [100, 2, 99, 5, 55, 0, 62, 3]
-]
+""" Quick sort implementation """
 
 
 def partition(list_to_partition):
@@ -15,10 +10,19 @@ def partition(list_to_partition):
         list: Partitioned list.
     """
     pivot = list_to_partition[-1]
-    for index, each_item in enumerate(list_to_partition):
-        if each_item > pivot:
-            temp = each_item[index + 1]
-            list_to_partition[each_item]`
+    partition_index = 0
+    # Swap all items less then pivot to the left of the partition index
+    for index in range(0, len(list_to_partition)):
+        if index < len(list_to_partition) - 1 and list_to_partition[index] <= pivot:
+            tmp = list_to_partition[index]
+            list_to_partition[index] = list_to_partition[partition_index]
+            list_to_partition[partition_index] = tmp
+            partition_index += 1
+    # Finally swap the partition index with the pivot
+    tmp = list_to_partition[partition_index]
+    list_to_partition[partition_index] = list_to_partition[-1]
+    list_to_partition[-1] = tmp
+    return list_to_partition
 
 
 def quick_sort(list_to_sort):
@@ -30,6 +34,13 @@ def quick_sort(list_to_sort):
         list: Sorted list.
     """
     return partition(list_to_partition=list_to_sort)
+
+
+INPUT = [
+    [2, 1, 9, 5, 7, 4],
+    [100, 2, 99, 5, 55, 0, 62, 3]
+]
+
 
 if __name__ == '__main__':
     for each_list in INPUT:
