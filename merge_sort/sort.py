@@ -59,4 +59,4 @@ def merge_sort(list_to_sort):
 
 if __name__ == '__main__':
     for each_list in INPUT:
-        print merge_sort(each_list)
+        print merge_sort(list_to_sort=each_list)
