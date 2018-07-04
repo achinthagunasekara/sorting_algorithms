@@ -1,10 +1,5 @@
 """ Merge sort implementation """
 
-INPUT = [
-    [2, 1, 9, 5, 7, 4],
-    [100, 2, 99, 5, 55, 0, 62, 3]
-]
-
 
 def merge(list_one, list_two, orginal_list):
     """
@@ -55,6 +50,12 @@ def merge_sort(list_to_sort):
     merge_sort(list_to_sort=list_two)
     merge(list_one=list_one, list_two=list_two, orginal_list=list_to_sort)
     return list_to_sort
+
+
+INPUT = [
+    [2, 1, 9, 5, 7, 4],
+    [100, 2, 99, 5, 55, 0, 62, 3]
+]
 
 
 if __name__ == '__main__':
