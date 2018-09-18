@@ -2,7 +2,7 @@
 
 ## Included Algorithms
 
-* bubble_sort
-* merge_sort
-* quick_sort
-* selection_sort
+* Bubble Sort
+* Merge Sort
+* Quick Sort
+* Selection Sort
